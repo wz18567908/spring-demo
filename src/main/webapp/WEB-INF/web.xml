@@ -37,5 +37,23 @@
         <servlet-name>spring-demo</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>initAccessTokenServlet</servlet-name>
+        <servlet-class>
+            com.wz.demo.access.AccessTokenServlet
+        </servlet-class>
+        <init-param>
+            <param-name>appid</param-name>
+            <param-value>wxf99844fe58250a80</param-value>
+        </init-param>
+        <init-param>
+            <param-name>appsecret</param-name>
+            <param-value>acbc0f8da63b493b02268b718241b6f2</param-value>
+        </init-param>
+        <load-on-startup>0</load-on-startup>
+ </servlet>
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
 
 </web-app>
