@@ -15,16 +15,16 @@ public class TokenThread implements Runnable {
                 accessToken = this.getAccessToken();
                 if(null!=accessToken){
                     System.out.println(accessToken.getTokenName());
-                    Thread.sleep(7000 * 1000); //获取到access_token 休眠7000秒
+                    Thread.sleep(7000 * 1000);
  
                 }else{
-                    Thread.sleep(1000*3); //获取的access_token为空 休眠3秒
+                    Thread.sleep(1000*3);
                 }
             }catch(Exception e){
-                System.out.println("发生异常："+e.getMessage());
+                System.out.println("accessToken error"+e.getMessage());
                 e.printStackTrace();
                 try{
-                    Thread.sleep(1000*10); //发生异常休眠1秒
+                    Thread.sleep(1000*10);
                 }catch (Exception e1){
  
                 }
@@ -32,11 +32,6 @@ public class TokenThread implements Runnable {
         }
     }
  
- 
-    /**
-     * 获取access_token
-     * @return
-     */
     private AccessToken getAccessToken(){
         NetWorkUtil netHelper = new NetWorkUtil();
         String Url = String.format("https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=%s&secret=%s",this.appId,this.appSecret);

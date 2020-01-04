@@ -13,6 +13,7 @@
         <spring.version>4.3.4.RELEASE</spring.version>
         <hibernate.version>5.1.4.Final</hibernate.version>
         <junit.version>4.11</junit.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <dependencies>
@@ -158,5 +159,19 @@
     </dependencies>
     <build>
         <finalName>spring-demo</finalName>
+        <defaultGoal>compile</defaultGoal>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <configuration>
+                        <source>1.8</source>
+                        <target>1.8</target>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
     </build>
+
 </project>

@@ -14,19 +14,7 @@ import javax.net.ssl.SSLSession;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
 
-/**
- * created by xiuhong.chen
- * 2017/12/28
- * 发起HTTPS请求的工具类
- * getHttpsResponse方法是请求一个https地址，参数requestMethod为字符串“GET”或者“POST”，传null或者“”默认为get方式。
- */
 public class NetWorkUtil {
-    /**
-     * 发起HTTPS请求
-     * @param reqUrl
-     * @param requestMethod
-     * @return 相应字符串
-     */
     public String getHttpsResponse(String reqUrl, String requestMethod) {
         URL url;
         InputStream is;
@@ -48,17 +36,16 @@ public class NetWorkUtil {
                 }
             });
 
-            con.setDoInput(true); //允许输入流，即允许下载
+            con.setDoInput(true);
 
-            //在android中必须将此项设置为false
-            con.setDoOutput(false); //允许输出流，即允许上传
-            con.setUseCaches(false); //不使用缓冲
+            con.setDoOutput(false);
+            con.setUseCaches(false);
             if (null != requestMethod && !requestMethod.equals("")) {
-                con.setRequestMethod(requestMethod); //使用指定的方式
+                con.setRequestMethod(requestMethod);
             } else {
-                con.setRequestMethod("GET"); //使用get请求
+                con.setRequestMethod("GET");
             }
-            is = con.getInputStream();   //获取输入流，此时才真正建立链接
+            is = con.getInputStream();
             InputStreamReader isr = new InputStreamReader(is);
             BufferedReader bufferReader = new BufferedReader(isr);
             String inputLine;

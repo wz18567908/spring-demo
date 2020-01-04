@@ -11,11 +11,11 @@ import java.io.IOException;
 public class AccessTokenServlet extends HttpServlet {
  
     public void init() throws ServletException {
-        TokenThread.appId = getInitParameter("appid");  //获取servlet初始参数appid和appsecret
+        TokenThread.appId = getInitParameter("appid");
         TokenThread.appSecret = getInitParameter("appsecret");
         System.out.println("appid:"+TokenThread.appId);
         System.out.println("appSecret:"+TokenThread.appSecret);
-        new Thread(new TokenThread()).start(); //启动进程
+        new Thread(new TokenThread()).start();
     }
  
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

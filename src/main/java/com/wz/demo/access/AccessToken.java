@@ -1,8 +1,8 @@
 package com.wz.demo.access;
 
 public class AccessToken {
-    private String tokenName; //获取到的凭证
-    private int expireSecond;    //凭证有效时间  单位:秒
+    private String tokenName;
+    private int expireSecond;
 
     public String getTokenName() {
         return tokenName;
